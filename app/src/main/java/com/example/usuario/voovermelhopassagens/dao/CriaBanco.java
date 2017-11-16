@@ -10,13 +10,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class CriaBanco extends SQLiteOpenHelper {
 
-    public static final String NOME_BANCO = "banco.creche";
-    public static final String TABELA = "Aluno";
+    public static final String NOME_BANCO = "banco.aerea";
+    public static final String TABELA = "Passageiro";
     public static final String ID = "_id";
     public static final String NOME = "nome";
-    public static final String DT_NASCIMENTO = "dt_nascimento";
-    public static final String MATRICULA = "matricula";
-    public static final String OBSERVACAO = "observacao";
+    public static final String CPF = "cpf";
+    public static final String ENDERECO = "endereco";
     public static final int VERSAO = 2;
 
     public CriaBanco(Context context){
@@ -24,21 +23,20 @@ public class CriaBanco extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase creche) {
+    public void onCreate(SQLiteDatabase aerea) {
 
-        creche.execSQL("CREATE TABLE " + TABELA + "("
+        aerea.execSQL("CREATE TABLE " + TABELA + "("
                 + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + NOME + " text,"
-                + DT_NASCIMENTO + " text,"
-                + MATRICULA + " text,"
-                + OBSERVACAO + " text"
+                + CPF + " text,"
+                + ENDERECO + " text"
                 +");");
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase creche, int oldVersion, int newVersion) {
-        creche.execSQL("DROP TABLE IF EXISTS" + TABELA);
-        onCreate(creche);
+    public void onUpgrade(SQLiteDatabase aerea, int oldVersion, int newVersion) {
+        aerea.execSQL("DROP TABLE IF EXISTS" + TABELA);
+        onCreate(aerea);
     }
 }

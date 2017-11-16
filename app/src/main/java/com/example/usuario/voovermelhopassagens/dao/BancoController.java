@@ -18,16 +18,16 @@ public class BancoController {
         banco = new CriaBanco(context);
     }
 
-    public String insereDado(String nome, String dt_nascimento, String matricula, String observacao) {
+    public String insereDado(String nome, String cpf, String endereco) {
         ContentValues valores;
         long resultado;
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
         valores.put(CriaBanco.NOME, nome);
-        valores.put(CriaBanco.DT_NASCIMENTO, dt_nascimento);
-        valores.put(CriaBanco.MATRICULA, matricula);
-        valores.put(CriaBanco.OBSERVACAO, observacao);
+        valores.put(CriaBanco.CPF, cpf);
+        valores.put(CriaBanco.ENDERECO, endereco);
+
 
         resultado = db.insert(CriaBanco.TABELA, null, valores);
         db.close();
@@ -53,7 +53,7 @@ public class BancoController {
 
     public Cursor carregaDadoById(int id) {
         Cursor cursor;
-        String[] campos = {banco.ID, banco.NOME, banco.DT_NASCIMENTO, banco.MATRICULA, banco.OBSERVACAO};
+        String[] campos = {banco.ID, banco.NOME, banco.CPF, banco.ENDERECO};
         String where = CriaBanco.ID + "=" + id;
         db = banco.getReadableDatabase();
         cursor = db.query(CriaBanco.TABELA, campos, where, null, null, null, null, null);
@@ -65,7 +65,7 @@ public class BancoController {
         return cursor;
     }
 
-    public void alteraRegistro(int id, String nome, String dt_nascimento, String matricula, String observacao) {
+    public void alteraRegistro(int id, String nome, String cpf, String endereco) {
         ContentValues valores;
         String where;
 
@@ -75,9 +75,8 @@ public class BancoController {
 
         valores = new ContentValues();
         valores.put(CriaBanco.NOME, nome);
-        valores.put(CriaBanco.DT_NASCIMENTO, dt_nascimento);
-        valores.put(CriaBanco.MATRICULA, matricula);
-        valores.put(CriaBanco.OBSERVACAO, observacao);
+        valores.put(CriaBanco.CPF, cpf);
+        valores.put(CriaBanco.ENDERECO, endereco);
 
         db.update(CriaBanco.TABELA, valores, where, null);
         db.close();

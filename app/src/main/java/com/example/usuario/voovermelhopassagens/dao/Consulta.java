@@ -23,16 +23,16 @@ public class Consulta extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_alunos);
+        setContentView(R.layout.activity_lista_passageiros);
 
         final BancoController crud = new BancoController(getBaseContext());
         final Cursor cursor = crud.carregaDados();
 
         String[] nomeCampos = new String[]{CriaBanco.ID, CriaBanco.NOME};
-        int[] idViews = new int[]{R.id.idAluno, R.id.nomeAluno};
+        int[] idViews = new int[]{R.id.idPassageiro, R.id.nomePassageiro};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
-                R.layout.alunos_layout, cursor, nomeCampos, idViews, 0);
+                R.layout.passageiro_layout, cursor, nomeCampos, idViews, 0);
         lista = (ListView) findViewById(R.id.listView);
         lista.setAdapter(adaptador);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {

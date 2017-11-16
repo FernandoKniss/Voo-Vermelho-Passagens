@@ -18,7 +18,7 @@ public class InsereDado extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.incial_activity);
+        setContentView(R.layout.activity_passageiro);
 
         Button botao = (Button)findViewById(R.id.button);
 
@@ -26,18 +26,18 @@ public class InsereDado extends Activity {
             @Override
             public void onClick(View v) {
                 BancoController crud = new BancoController(getBaseContext());
-                EditText nome = (EditText)findViewById(R.id.editText);
-                EditText dtNascimento = (EditText)findViewById((R.id.editText2));
-                EditText matricula = (EditText)findViewById(R.id.editText3);
-                EditText obsercao = (EditText) findViewById(R.id.editText5);
+                EditText nome = (EditText)findViewById(R.id.nome);
+                EditText cpf = (EditText)findViewById((R.id.cpf));
+                EditText endereco = (EditText)findViewById(R.id.endereco);
+
                 String nomeString = nome.getText().toString();
-                String dtNascimentoString = dtNascimento.getText().toString();
-                String matriculaString = matricula.getText().toString();
-                String observacaoString = obsercao.getText().toString();
+                String cpfString = cpf.getText().toString();
+                String enderecoString = endereco.getText().toString();
+
                 String resultado;
 
 
-                resultado = crud.insereDado(nomeString, dtNascimentoString, matriculaString, observacaoString);
+                resultado = crud.insereDado(nomeString, cpfString, enderecoString);
 
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
             }

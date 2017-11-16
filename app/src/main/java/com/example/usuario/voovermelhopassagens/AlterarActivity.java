@@ -15,10 +15,9 @@ import com.example.usuario.voovermelhopassagens.dao.CriaBanco;
 
 public class AlterarActivity extends AppCompatActivity {
 
-    EditText aluno;
-    EditText dt_Nascimento;
-    EditText matricula;
-    EditText observacao;
+    EditText passageiro;
+    EditText cpf;
+    EditText endereco;
     Button alterar;
     Button deletar;
     Cursor cursor;
@@ -35,10 +34,9 @@ public class AlterarActivity extends AppCompatActivity {
 
         crud = new BancoController(getBaseContext());
 
-        aluno = (EditText) findViewById(R.id.editText5);
-        dt_Nascimento = (EditText) findViewById(R.id.editText6);
-        matricula = (EditText) findViewById(R.id.editText7);
-        observacao = (EditText) findViewById(R.id.editText8);
+        passageiro = (EditText) findViewById(R.id.editText5);
+        cpf = (EditText) findViewById(R.id.editText6);
+        endereco = (EditText) findViewById(R.id.editText7);
 
         clear((ViewGroup)findViewById(R.id.Alterar));
 
@@ -46,17 +44,17 @@ public class AlterarActivity extends AppCompatActivity {
         deletar = (Button)findViewById(R.id.button3);
 
         cursor = crud.carregaDadoById(Integer.parseInt(codigo));
-        aluno.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NOME)));
-        dt_Nascimento.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.DT_NASCIMENTO)));
-        matricula.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.MATRICULA)));
-        observacao.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.OBSERVACAO)));
+        passageiro.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NOME)));
+        cpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.CPF)));
+            endereco.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.ENDERECO)));
+
 
         alterar.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                crud.alteraRegistro(Integer.parseInt(codigo), aluno.getText().toString(),dt_Nascimento.getText().toString(),
-                        matricula.getText().toString(), observacao.getText().toString());
+                crud.alteraRegistro(Integer.parseInt(codigo), passageiro.getText().toString(),cpf.getText().toString(),
+                        endereco.getText().toString());
                 Intent intent = new Intent(AlterarActivity.this,Consulta.class);
                 startActivity(intent);
                 finish();
