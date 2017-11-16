@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome Completo"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <EditText
+        android:id="@+id/cpf"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="152dp" />
+
+    <EditText
+        android:id="@+id/endereco"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Endereço"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <CheckBox
+        android:id="@+id/comum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@android:color/holo_orange_dark"
+        android:text="Comum    "
+        android:textColorLink="@android:color/background_dark"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="366dp" />
+
+    <CheckBox
+        android:id="@+id/preferencial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@android:color/holo_orange_dark"
+        android:text="Preferencial"
+        android:textColorLink="@android:color/background_dark"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="366dp" />
+
+    <CheckBox
+        android:id="@+id/vip"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:buttonTint="@android:color/holo_orange_dark"
+        android:text="VIP     "
+        android:textColorLink="@android:color/background_dark"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="366dp" />
+
+    <Button
+        android:id="@+id/cadastrar2"
+        android:layout_width="379dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Cadastrar"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="485dp" />
+</android.support.constraint.ConstraintLayout>
