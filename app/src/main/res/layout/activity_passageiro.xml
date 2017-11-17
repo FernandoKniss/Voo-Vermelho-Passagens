@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +9,9 @@
         android:id="@+id/nome"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="47dp"
         android:ems="10"
         android:hint="Nome Completo"
         android:inputType="textPersonName"
@@ -19,6 +22,9 @@
         android:id="@+id/cpf"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/endereco"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp"
         android:ems="10"
         android:hint="CPF"
         android:inputType="number"
@@ -29,6 +35,9 @@
         android:id="@+id/endereco"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/comum"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="49dp"
         android:ems="10"
         android:hint="Endereço"
         android:inputType="textPersonName"
@@ -39,6 +48,9 @@
         android:id="@+id/comum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/preferencial"
+        android:layout_alignBottom="@+id/preferencial"
+        android:layout_alignStart="@+id/cadastrar2"
         android:buttonTint="@android:color/holo_orange_dark"
         android:text="Comum    "
         android:textColorLink="@android:color/background_dark"
@@ -50,6 +62,9 @@
         android:id="@+id/preferencial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/vip"
+        android:layout_alignBottom="@+id/vip"
+        android:layout_centerHorizontal="true"
         android:buttonTint="@android:color/holo_orange_dark"
         android:text="Preferencial"
         android:textColorLink="@android:color/background_dark"
@@ -61,6 +76,10 @@
         android:id="@+id/vip"
         android:layout_width="98dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/cadastrar2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="83dp"
+        android:layout_marginEnd="9dp"
         android:buttonTint="@android:color/holo_orange_dark"
         android:text="VIP     "
         android:textColorLink="@android:color/background_dark"
@@ -70,8 +89,11 @@
 
     <Button
         android:id="@+id/cadastrar2"
-        android:layout_width="379dp"
+        android:layout_width="340dp"
         android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
         android:background="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
         android:text="Cadastrar"
@@ -80,4 +102,4 @@
         android:textSize="16sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="485dp" />
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

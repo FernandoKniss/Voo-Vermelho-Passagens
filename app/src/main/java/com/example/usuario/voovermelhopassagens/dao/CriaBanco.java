@@ -36,7 +36,7 @@ public class CriaBanco extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase aerea, int oldVersion, int newVersion) {
-        aerea.execSQL("DROP TABLE IF EXISTS" + TABELA);
+       // aerea.execSQL("DROP TABLE IF EXISTS" + TABELA);
         onCreate(aerea);
     }
 }

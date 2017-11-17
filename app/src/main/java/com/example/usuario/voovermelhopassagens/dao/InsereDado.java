@@ -20,7 +20,7 @@ public class InsereDado extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passageiro);
 
-        Button botao = (Button)findViewById(R.id.button);
+        Button botao = (Button)findViewById(R.id.cadastrar2);
 
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
