@@ -15,16 +15,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".PassagemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".AlterarActivity" />
         <activity android:name=".dao.InsereDado" />
         <activity android:name=".dao.Consulta" />
+        <activity android:name=".AviaoActivity" />
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>

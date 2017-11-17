@@ -15,6 +15,7 @@
         android:layout_marginTop="16dp"
         android:buttonTint="@android:color/holo_orange_dark"
         android:text="Só ida"
+        android:textColorLink="@android:color/holo_red_dark"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="35dp" />
@@ -28,6 +29,7 @@
         android:layout_marginEnd="7dp"
         android:buttonTint="@android:color/holo_orange_dark"
         android:text="Ida e Volta"
+        android:textColorLink="@android:color/holo_red_dark"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="253dp"
         tools:layout_editor_absoluteY="35dp" />
@@ -173,12 +175,13 @@
         tools:layout_editor_absoluteY="367dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/pesquisar"
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="30dp"
+        android:background="@android:color/holo_orange_dark"
         android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Pesquisar"
         tools:layout_editor_absoluteX="15dp"
